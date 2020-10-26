@@ -1,8 +1,11 @@
-COMPILER=g++
-CPPFLAGS=-Wall -g -pedantic -pedantic-errors -std=c++11
+COMPILER=kotlinc
+KOTLINFLAGS=-include-runtime -d
 
 algorithm_f:
-	$(COMPILER) $(CPPFLAGS) -o algorithm_f algorithm_f.cpp
+	$(COMPILER) algorithm_f.kt $(KOTLINFLAGS) algorithm_f.jar
+
+run:
+	java -jar algorithm_f.jar < input.txt
 
 clean:
-	rm algorithm_f
+	rm algorithm_f.jar
