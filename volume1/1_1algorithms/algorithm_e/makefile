@@ -1,11 +1,11 @@
-COMPILER=kotlinc
-KOTLINFLAGS=-include-runtime -d
+COMPILER=swiftc
+SWIFTFLAGS=-o
 
 algorithm_e:
-	$(COMPILER) algorithm_e.kt $(KOTLINFLAGS) algorithm_e.jar
+	$(COMPILER) -o algorithm_e algorithm_e.swift 
 
 run:
-	java -jar algorithm_e.jar < input.txt
+	./algorithm_e < input.txt
 
 clean:
-	rm algorithm_e.jar
+	rm algorithm_e
